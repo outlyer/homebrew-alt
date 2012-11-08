@@ -1,10 +1,10 @@
 require 'formula'
 
 class Kindlegen < Formula
-  url 'http://s3.amazonaws.com/kindlegen/KindleGen_Mac_i386_v2_5.zip'
+  url 'http://s3.amazonaws.com/kindlegen/KindleGen_Mac_i386_v2_7.zip'
   homepage 'http://www.amazon.com/gp/feature.html?docId=1000234621'
-  md5 '8daf6956d54df8030b12ec9116945482'
-  version '2.5'
+  md5 'b041f83c720ff7b9181e576c0a82140c'
+  version '2.7'
 
   skip_clean 'bin'
 
