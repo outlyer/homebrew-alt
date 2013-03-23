@@ -2,33 +2,20 @@ Homebrew-alt
 ============
 This repository contains "unofficial" formulae for [Homebrew](https://github.com/mxcl/homebrew).
 
-ATTN: the `duplicates`, `versions` and `unmaintained` directories have been moved to their own repositories:
-
- * [homebrew-dupes][]
- * [homebrew-versions][]
- * [homebrew-boneyard][]
-
 Installing Homebrew-alt Formulae
 --------------------------------
-Just `brew tap adamv/alt` and then `brew install <formula>`.
+Just `brew tap outlyer/alt` and then `brew install <formula>`.
 
-If the formula conflicts with one in mxcl/master, you can `brew install adamv/alt/<formula>`.
+If the formula conflicts with one in mxcl/master, you can `brew install outlyer/alt/<formula>`.
 
 You can also install via URL:
 
 ```
-brew install https://raw.github.com/adamv/homebrew-alt/master/<directory>/<formula>.rb
+brew install https://raw.github.com/outlyer/homebrew-alt/master/<directory>/<formula>.rb
 ```
 
 Categories
 ----------
-  * **fonts**  
-
-  * **head-only**  
-  Formulae that provide only the latest development HEAD.
-
-  * **mono**  
-
   * **non-free**  
   Formulae that provide non-free software.
 
