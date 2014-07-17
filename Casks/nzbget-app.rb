@@ -1,8 +1,8 @@
 class NzbgetApp < Cask
-  url 'http://sourceforge.net/projects/nzbget/files/nzbget-13.0-testing-r1053-bin-osx-x64.zip'
+  url 'http://downloads.sourceforge.net/project/nzbget/nzbget-stable/13.0/nzbget-13.0-bin-osx-x64.zip'
   homepage 'http://nzbget.net'
-  version '0.13.0-testing-r1053'
-  sha256 'c03be2fed4d8ddcb5b787ed1d47b2f54649e2247995392f3006ffa16ecc7f989'
+  version '0.13.0'
+  sha256 '81099686c51f24c0247a28fdddd604c2c9e36136da4c9541d070a14f5b0d704c'
   link 'NZBGet.app'
   after_install do
     system '/usr/bin/defaults', 'write', 'net.sourceforge.nzbget', 'DoNotShowWelcomeDialog', '-bool', 'true'
