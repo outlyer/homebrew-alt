@@ -2,13 +2,13 @@ require "formula"
 
 class Ffmpeg < Formula
   homepage "http://ffmpeg.org/"
-  url "http://ffmpeg.org/releases/ffmpeg-2.2.4.tar.bz2"
-  sha1 "571f36f92709b77808e6ef87a01e47e5df1fe319"
+  url "http://ffmpeg.org/releases/ffmpeg-2.2.7.tar.bz2"
+  sha1 "51c0e8d77b84122fcc0af8444a87abd9472275d1"
 
   head "git://git.videolan.org/ffmpeg.git"
 
   patch do
-      url "https://gist.githubusercontent.com/mikegabriel/86787c63199235aa8f58/raw/b5c8bc62935089b29162fa1b526c0bc8fd526488/ffmpeg-2.2.2-defaultstreams.patch"
+      url "https://gist.githubusercontent.com/outlyer/4a88f1adb7f895b93fd9/raw/b5c8bc62935089b29162fa1b526c0bc8fd526488/ffmpeg-2.2.2-defaultstreams.patch"
       sha1 "180423553119326c0e18a41de92eae900350b67c"
   end
 
