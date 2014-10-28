@@ -3,7 +3,7 @@ require 'formula'
 class Kindlegen < Formula
   url 'http://kindlegen.s3.amazonaws.com/KindleGen_Mac_i386_v2_9.zip'
   homepage 'http://www.amazon.com/gp/feature.html?docId=1000234621'
-  sha1 '851064ef18687edaf93abd781f9711a2cb293f7d'
+  sha1 '94e959d10d51f4fe938b8ddab11bcc2c4dd26b39'
   version '2.9'
 
   skip_clean 'bin'
