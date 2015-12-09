@@ -2,8 +2,8 @@ require 'formula'
 
 class Rar < Formula
   homepage 'http://www.rarlab.com/'
-  url 'http://www.rarlab.com/rar/rarosx-4.2.0.tar.gz'
-  sha1 '20c0902650b842130aa3fc5c249c312bcd9d3440'
+  url 'http://www.rarlab.com/rar/rarosx-5.3.0.tar.gz'
+  sha256 '1a2a4fc7a146a9847386d6e0165bf7bfc540a3d559b15c74d3be42d37c6409cf'
   skip_clean 'bin'
 
   def install
