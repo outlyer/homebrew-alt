@@ -1,9 +1,9 @@
 class ArchiSteamFarmBin < Formula
   desc "A C# (mono) application that allows you to farm steam cards using multiple steam accounts simultaneously."
   homepage "https://github.com/JustArchi/ArchiSteamFarm"
-  url "https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.0.5.9/ASF-osx-x64.zip"
-  sha256 "53b8449f5bd28ec458f406d5782079ae6947a2607a6dc9d30c16367b76739b4c"
-  version "3.0.5.9"
+  url "https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.0.6.0/ASF-osx-x64.zip"
+  sha256 "44cabb165fa23526321ee0ae93ee9588421fd079867590e0f5e4f257beeb5d16"
+  version "3.0.6.0"
 
   bottle :unneeded
 
