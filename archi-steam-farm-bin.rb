@@ -1,9 +1,9 @@
 class ArchiSteamFarmBin < Formula
   desc "A C# (mono) application that allows you to farm steam cards using multiple steam accounts simultaneously."
   homepage "https://github.com/JustArchi/ArchiSteamFarm"
-  url "https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.1.0.1/ASF-osx-x64.zip"
-  sha256 "4ffa6f07bc27405f1eb54b1b51480359706d1440c907f64f84380c0346180d57"
-  version "3.1.0.1"
+  url "https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.1.0.3/ASF-osx-x64.zip"
+  sha256 "2e1bc685059710a893271729162e69ff57ead469842b548bae9a0d0d352d5204"
+  version "3.1.0.3"
 
   bottle :unneeded
 
@@ -19,9 +19,9 @@ class ArchiSteamFarmBin < Formula
   def caveats; <<~EOS
     Config: #{etc}/archi-steam-farm/
 
-    You can generate a configuration file via the web-based configurator here: 
+    You can generate a configuration file via the web-based configurator here:
     https://justarchi.github.io/ArchiSteamFarm/
-    
+
     EOS
   end
 
