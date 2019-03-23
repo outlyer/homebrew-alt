@@ -80,8 +80,6 @@ class Ffmpeg < Formula
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
-      --enable-ffplay
-      --enable-gpl
       --enable-nonfree
       --enable-opencl
       --enable-libfontconfig
