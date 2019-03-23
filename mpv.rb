@@ -12,14 +12,15 @@ class Mpv < Formula
   depends_on "pkg-config" => :build
   depends_on "python" => :build
 
-  depends_on "deus0ww/tap/ffmpeg"
-  depends_on "luajit"
+  depends_on "outlyer/alt/ffmpeg"
+  depends_on "libass"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "little-cms2"
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "youtube-dl"
+  depends_on "lua@5.1"
 
   depends_on "vapoursynth" => :optional
   depends_on "jack" => :optional
