@@ -2,8 +2,8 @@
 class Pdd < Formula
   desc ":date: Tiny date, time diff calculator with timers"
   homepage "https://github.com/jarun/pdd"
-  url "https://github.com/jarun/pdd/archive/v1.2.tar.gz"
-  sha256 "89821804026815be80ad2ae84b0afcb7203e34a49f0654e78852d0394950cdbc"
+  url "https://github.com/jarun/pdd/archive/v1.4.tar.gz"
+  sha256 "e3d2ec2ebfd94572d033f94885a99906343459431f3299cf945c7bd6f1258eab"
 
   depends_on "python"
 

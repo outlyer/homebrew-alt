@@ -1,8 +1,8 @@
 class Fastmod < Formula
   desc "Tool to assist with large-scale codebase refactors with optional interventions."
   homepage "https://github.com/facebookincubator/fastmod"
-  url "https://github.com/facebookincubator/fastmod/archive/v0.2.1.tar.gz"
-  sha256 "746b6b0f8e2b9a3fb2d2144a234ef30b6d88c6d38dcd499d30e644bb761d2593"
+  url "https://github.com/facebookincubator/fastmod/archive/v0.2.6.tar.gz"
+  sha256 "b70f615e883cc6cc235b62ee15ec2ec7ef4b04618b42fb79d8ee807440f6cf3c"
 
   depends_on "rust" => :build
 
