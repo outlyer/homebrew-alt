@@ -12,8 +12,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/80/f2/f6aca7f1b209bb9a7ef069d68813b091c8c3620642b568dac4eb0e507748/beautifulsoup4-4.7.1.tar.gz"
-    sha256 "945065979fb8529dd2f37dbb58f00b661bdbcbebf954f93b32fdf5263ef35348"
+    url "https://files.pythonhosted.org/packages/23/7b/37a477bc668068c23cb83e84191ee03709f1fa24d957b7d95083f10dda14/beautifulsoup4-4.8.0.tar.gz"
+    sha256 "25288c9e176f354bf277c0a10aa96c782a6a18a17122dba2e8cec4a97e03343b"
   end
 
   resource "chardet" do
@@ -27,8 +27,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "dogpile.cache" do
-    url "https://files.pythonhosted.org/packages/84/3e/dbf1cfc5228f1d3dca80ef714db2c5aaec5cd9efaf54d7e3daef6bc48b19/dogpile.cache-0.7.1.tar.gz"
-    sha256 "691b7f199561c4bd6e7e96f164a43cc3781b0c87bea29b7d59d859f873fd4a31"
+    url "https://files.pythonhosted.org/packages/29/e2/f850b80eac4937c6d9ea6a24fac3764d951d82eb5f3e9a8ccd6ac24d70f8/dogpile.cache-0.8.0.tar.gz"
+    sha256 "70f5eae4aec908f76188a2c287e07105f60c05d879bb9a4efcc5ba44563d8de6"
   end
 
   resource "dogpile.core" do
@@ -47,8 +47,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/81/4d/a7954a90c51b7a84334740e90a5f6c06ce9e157bdaaf1a342fcbd9a22d85/pbr-5.2.1.tar.gz"
-    sha256 "93d2dc6ee0c9af4dbc70bc1251d0e545a9910ca8863774761f92716dece400b6"
+    url "https://files.pythonhosted.org/packages/99/f1/7807d3409c79905a907f1c616d910c921b2a8e73c17b2969930318f44777/pbr-5.4.3.tar.gz"
+    sha256 "2c8e420cd4ed4cec4e7999ee47409e876af575d4c35a45840d59e8b5f3155ab8"
   end
 
   resource "pysrt" do
