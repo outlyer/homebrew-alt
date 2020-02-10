@@ -12,8 +12,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/23/7b/37a477bc668068c23cb83e84191ee03709f1fa24d957b7d95083f10dda14/beautifulsoup4-4.8.0.tar.gz"
-    sha256 "25288c9e176f354bf277c0a10aa96c782a6a18a17122dba2e8cec4a97e03343b"
+    url "https://files.pythonhosted.org/packages/52/ba/0e121661f529e7f456e903bf5c4d255b8051d8ce2b5e629c5212efe4c3f1/beautifulsoup4-4.8.2.tar.gz"
+    sha256 "05fd825eb01c290877657a56df4c6e4c311b3965bda790c613a3d6fb01a5462a"
   end
 
   resource "chardet" do
@@ -27,8 +27,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "dogpile.cache" do
-    url "https://files.pythonhosted.org/packages/29/e2/f850b80eac4937c6d9ea6a24fac3764d951d82eb5f3e9a8ccd6ac24d70f8/dogpile.cache-0.8.0.tar.gz"
-    sha256 "70f5eae4aec908f76188a2c287e07105f60c05d879bb9a4efcc5ba44563d8de6"
+    url "https://files.pythonhosted.org/packages/ac/6a/9ac405686a94b7f009a20a50070a5786b0e1aedc707b88d40d0c4b51a82e/dogpile.cache-0.9.0.tar.gz"
+    sha256 "b348835825c9dcd251d9aad1f89f257277ac198a3e35a61980ab4cb28c75216b"
   end
 
   resource "dogpile.core" do
@@ -42,23 +42,28 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "guessit" do
-    url "https://pypi.python.org/packages/source/g/guessit/guessit-1.0.3.tar.gz"
-    sha256 "8160423fd90febab78f2d78daff0ad86b41b2db96fb4834882b81abdb3a76be4"
+    url "https://pypi.python.org/packages/source/g/guessit/guessit-3.1.0.tar.gz"
+    sha256 "2dcd3f2acaf6c1a864f903f084ddd6a6b753f3107ae864355d7c8c1e9cb205b2"
+  end
+
+  resource "mutagen" do
+    url "https://files.pythonhosted.org/packages/96/9f/280220926cabbf4822f80e094a5190fb3df245209648e169c8bcf708697b/mutagen-1.44.0.tar.gz"
+    sha256 "56065d8a9ca0bc64610a4d0f37e2bd4453381dde3226b8835ee656faa3287be4"
   end
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/99/f1/7807d3409c79905a907f1c616d910c921b2a8e73c17b2969930318f44777/pbr-5.4.3.tar.gz"
-    sha256 "2c8e420cd4ed4cec4e7999ee47409e876af575d4c35a45840d59e8b5f3155ab8"
+    url "https://files.pythonhosted.org/packages/98/8a/defa5215d2dcf98cc80f4783e951a8356e38f352f7a169ae11670dcb1f25/pbr-5.4.4.tar.gz"
+    sha256 "139d2625547dbfa5fb0b81daebb39601c478c21956dc57e2e07b74450a8c506b"
   end
 
   resource "pysrt" do
-    url "https://pypi.python.org/packages/f6/33/16ad65a8973cb8bcb494af09ee1b9ab5ffdd6ff300bce5d3ac7d3cb1f2cc/pysrt-1.1.1.tar.gz"
-    sha256 "fb4c10424549fc5a32d19cd5091f00316b875461fcd79a7809bb55056974d0aa"
+    url "https://files.pythonhosted.org/packages/31/1a/0d858da1c6622dcf16011235a2639b0a01a49cecf812f8ab03308ab4de37/pysrt-1.1.2.tar.gz"
+    sha256 "b4f844ba33e4e7743e9db746492f3a193dc0bc112b153914698e7c1cdeb9b0b9"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/ad/99/5b2e99737edeb28c71bcbec5b5dda19d0d9ef3ca3e92e3e925e7c0bb364c/python-dateutil-2.8.0.tar.gz"
-    sha256 "c89805f6f4d64db21ed966fda138f8a5ed7a4fdbc1a8ee329ce1b74e3c74da9e"
+    url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
+    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
   end
 
   resource "requests" do
@@ -77,8 +82,8 @@ class Sickbeardmp4automator < Formula
   end
 
   resource "subliminal" do
-    url "https://pypi.python.org/packages/source/s/subliminal/subliminal-1.1.1.tar.gz"
-    sha256 "ab50cff2dcdc4c302f11074d22b2aa8b1c12bbd13e81ee7ad362947a18ad3fca"
+    url "https://pypi.python.org/packages/source/s/subliminal/subliminal-2.0.5.tar.gz"
+    sha256 "147aa54f54de62d6fcafa213bb9ea89319600c133dab1a5532ff7126352bfbb7"
   end
 
   resource "urllib3" do
@@ -109,7 +114,7 @@ class Sickbeardmp4automator < Formula
 
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
-    %w[babelfish beautifulsoup4 qtfaststart chardet click dogpile.cache dogpile.core enzyme guessit pbr pysrt python-dateutil idna requests six stevedore urllib3 certifi].each do |r|
+    %w[babelfish beautifulsoup4 qtfaststart chardet click dogpile.cache dogpile.core enzyme guessit mutagen pbr pysrt python-dateutil idna requests six stevedore urllib3 certifi].each do |r|
       resource(r).stage do
         system "python3", *Language::Python.setup_install_args(libexec/"vendor")
       end
