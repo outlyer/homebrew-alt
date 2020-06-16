@@ -1,9 +1,8 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.29.1.tar.gz"
-  sha256 "f9f9d461d1990f9728660b4ccb0e8cb5dce29ccaa6af567bec481b79291ca623"
-  revision 3
+  url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
+  sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
   head "https://github.com/deus0ww/mpv.git"
 
   option "with-lgpl", "Build with LGPLv2.1 or later license"
@@ -20,7 +19,7 @@ class Mpv < Formula
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "youtube-dl"
-  depends_on "lua@5.1"
+  depends_on "lua"
 
   depends_on "vapoursynth" => :optional
   depends_on "jack" => :optional
