@@ -123,7 +123,7 @@ class Sickbeardmp4automator < Formula
 
   def post_install
     (etc/"sickbeardmp4automator").mkpath
-    etc.install "#{libexec}/autoProcess.ini.sample" => etc/"sickbeardmp4automator/autoProcess.ini"
+    #etc.install "#{libexec}/autoProcess.ini.sample" => etc/"sickbeardmp4automator/autoProcess.ini"
     libexec.install_symlink etc/"sickbeardmp4automator/autoProcess.ini" => "autoProcess.ini"
   end
 
