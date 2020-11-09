@@ -106,6 +106,16 @@ class Sickbeardmp4automator < Formula
     sha256 "c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407"
   end
 
+  resource "rebulk" do
+  	url "https://files.pythonhosted.org/packages/source/r/rebulk/rebulk-2.0.1.tar.gz"
+  	sha256 "320ded3cc456347d828f95e9aa5f8bab77ac01943cad024c06012069fe19690a"
+  end
+
+  resource "tmdbsimple" do
+  	url "https://github.com/celiao/tmdbsimple/archive/2.6.6.tar.gz"
+  	sha256 "905ec0fbf35beaece402beb119f7d062d41b9ba8c48ca9240afc964d98cffca6"
+  end 
+
   def install
     prefix.install_metafiles
     libexec.install Dir["*"]
