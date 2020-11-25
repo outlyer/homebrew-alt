@@ -1,25 +1,25 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
-  sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
-  head "https://github.com/deus0ww/mpv.git"
-
-  option "with-lgpl", "Build with LGPLv2.1 or later license"
+  url "https://github.com/mpv-player/mpv/archive/v0.33.0.tar.gz"
+  sha256 "f1b9baf5dc2eeaf376597c28a6281facf6ed98ff3d567e3955c95bf2459520b4"
+  license :cannot_represent
+  head "https://github.com/mpv-player/mpv.git"
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@3.9" => :build
+  depends_on xcode: :build
 
   depends_on "outlyer/alt/ffmpeg"
   depends_on "libass"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "little-cms2"
-  depends_on "mujs"
+#  depends_on "mujs"
   depends_on "uchardet"
   depends_on "youtube-dl"
-  depends_on "lua"
+  depends_on "lua@5.1"
 
   depends_on "vapoursynth" => :optional
   depends_on "jack" => :optional
@@ -36,21 +36,23 @@ class Mpv < Formula
     # or getdefaultlocale in docutils. Force the default c/posix locale since
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
-    ENV.O3
+#    ENV.O3
+
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
 
     args = %W[
       --prefix=#{prefix}
       --enable-html-build
-      --enable-javascript
       --enable-libmpv-shared
-      --enable-lua
       --enable-libarchive
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}
       --docdir=#{doc}
-      --enable-zsh-comp
       --zshdir=#{zsh_completion}
+      --enable-lua
+      --enable-uchardet
+      --lua=51deb
     ]
 
     args << "--enable-libbluray" if build.with? "libbluray"
