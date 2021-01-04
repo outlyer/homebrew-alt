@@ -123,7 +123,6 @@ class Ffmpeg < Formula
       args << "--extra-cflags=" + `pkg-config --cflags libopenjp2`.chomp
     end
 
-    ENV.O3
     system "./configure", *args
     system "make", "install"
 
