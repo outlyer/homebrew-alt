@@ -1,9 +1,9 @@
 class ArchiSteamFarmBin < Formula
   desc "A C# (mono) application that allows you to farm steam cards using multiple steam accounts simultaneously."
   homepage "https://github.com/JustArchi/ArchiSteamFarm"
-  url "https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.0.0.5/ASF-osx-x64.zip"
-  sha256 "65ad132642adb5f8f72230bd1feb70813e48a09ce6882d31a009f019c3e6c373"
-  version "5.0.0.5"
+  url "https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.0.3.2/ASF-osx-x64.zip"
+  sha256 "c49789af20bdeb48d7a7e1350da4dc9f1b93bca9a98880635bfd14241ae86329"
+  version "5.0.3.2"
 
   bottle :unneeded
 
@@ -13,7 +13,7 @@ class ArchiSteamFarmBin < Formula
     libexec.install Dir["*"]
     chmod 0755, Dir["#{libexec}/ArchiSteamFarm"]
     rm_rf Dir["#{libexec}/config"]
-    libexec.install_symlink etc/"archi-steam-farm" => "config"
+    libexec.install_symlink etc/asf => "config"
   end
 
   def caveats; <<~EOS
