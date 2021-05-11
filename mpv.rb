@@ -16,7 +16,7 @@ class Mpv < Formula
  # depends_on "libarchive"
   #depends_on "little-cms2"
 #  depends_on "mujs"
-#  depends_on "uchardet"
+  depends_on "uchardet"
   depends_on "youtube-dl"
   depends_on "luajit-openresty"
 
