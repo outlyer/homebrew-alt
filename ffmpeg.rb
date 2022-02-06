@@ -3,7 +3,15 @@ class Ffmpeg < Formula
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-5.0.tar.xz"
   sha256 "51e919f7d205062c0fd4fae6243a84850391115104ccf1efc451733bc0ac7298"
-  head "https://github.com/FFmpeg/FFmpeg.git"
+  # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
+  # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
+  license "GPL-2.0-or-later"
+  head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
+
+ livecheck do
+    url "https://ffmpeg.org/download.html"
+    regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   option "with-chromaprint", "Enable the Chromaprint audio fingerprinting library"
   option "with-fdk-aac", "Enable the Fraunhofer FDK AAC library"
@@ -22,51 +30,51 @@ class Ffmpeg < Formula
 
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
-  depends_on "texi2html" => :build
 
+  depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "openssl"
+  depends_on "gnutls"
   depends_on "xz"
 
-  depends_on "libvorbis" => :optional
-  depends_on "libvpx" => :optional
-  depends_on "opencore-amr" => :optional
-  depends_on "lame" => :optional
-  depends_on "opus" => :optional
-  depends_on "rtmpdump" => :optional
-  depends_on "sdl2" => :optional
-  depends_on "snappy" => :optional
-  depends_on "speex" => :optional
-  depends_on "theora" => :optional
-  depends_on "x264" => :optional
-  depends_on "x265" => :optional
-  depends_on "xvid" => :optional
   depends_on "chromaprint" => :optional
   depends_on "fdk-aac" => :optional
   depends_on "fontconfig" => :optional
+  depends_on "frei0r" => :optional
   depends_on "game-music-emu" => :optional
+  depends_on "lame" => :optional
   depends_on "libbluray" => :optional
   depends_on "libbs2b" => :optional
   depends_on "libcaca" => :optional
   depends_on "libgsm" => :optional
   depends_on "libmodplug" => :optional
   depends_on "librsvg" => :optional
+  depends_on "libsoxr" => :optional
   depends_on "libssh" => :optional
   depends_on "libvidstab" => :optional
   depends_on "libvmaf" => :optional
+  depends_on "libvorbis" => :optional
+  depends_on "libvpx" => :optional
+  depends_on "opencore-amr" => :optional
   depends_on "openh264" => :optional
   depends_on "openjpeg" => :optional
+  depends_on "opus" => :optional
+  depends_on "rtmpdump" => :optional
   depends_on "rubberband" => :optional
+  depends_on "sdl2" => :optional
+  depends_on "snappy" => :optional
+  depends_on "speex" => :optional
   depends_on "srt" => :optional
   depends_on "tesseract" => :optional
+  depends_on "theora" => :optional
   depends_on "two-lame" => :optional
   depends_on "wavpack" => :optional
   depends_on "webp" => :optional
+  depends_on "x264" => :optional
+  depends_on "x265" => :optional
+  depends_on "xvid" => :optional
   depends_on "zeromq" => :optional
   depends_on "zimg" => :optional
-  depends_on "frei0r" => :optional
-  depends_on "libsoxr" => :optional
 
 
   def install
@@ -84,7 +92,8 @@ class Ffmpeg < Formula
       --enable-libfontconfig
       --enable-libfreetype
       --enable-lzma
-      --enable-openssl
+      --enable-libdav1d
+      --enable-gnutls
       --disable-libjack
       --disable-indev=jack
     ]

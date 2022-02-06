@@ -13,11 +13,11 @@ class Mpv < Formula
   depends_on "outlyer/alt/ffmpeg"
   depends_on "libass"
  # depends_on "jpeg"
- # depends_on "libarchive"
+  depends_on "libarchive"
   #depends_on "little-cms2"
 #  depends_on "mujs"
   depends_on "uchardet"
-  depends_on "youtube-dl"
+  depends_on "yt-dlp"
   depends_on "luajit-openresty"
 
   depends_on "vapoursynth" => :optional
@@ -35,9 +35,11 @@ class Mpv < Formula
     # or getdefaultlocale in docutils. Force the default c/posix locale since
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
-#    ENV.O3
 
+    # libarchive is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    # luajit-openresty is keg-only
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["luajit-openresty"].opt_lib/"pkgconfig"
 
     args = %W[
       --prefix=#{prefix}
@@ -48,6 +50,7 @@ class Mpv < Formula
       --zshdir=#{zsh_completion}
       --disable-libarchive
       --enable-lua
+      --enable-libarchive
       --lua=luajit
       --enable-uchardet
     ]
@@ -61,9 +64,9 @@ class Mpv < Formula
       args << "--enable-lgpl"
     end
 
-    system "./bootstrap.py"
-    system "python3", "waf", "configure", *args
-    system "python3", "waf", "install"
+    system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
+    system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
+    system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
 
     system "python3", "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
