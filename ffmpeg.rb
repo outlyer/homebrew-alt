@@ -39,7 +39,6 @@ class Ffmpeg < Formula
 
   depends_on "chromaprint" => :optional
   depends_on "fdk-aac" => :optional
-  depends_on "fontconfig" => :optional
   depends_on "frei0r" => :optional
   depends_on "game-music-emu" => :optional
   depends_on "lame" => :optional
