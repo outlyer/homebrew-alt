@@ -7,7 +7,7 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git"
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on xcode: :build
 
   depends_on "outlyer/alt/ffmpeg"
@@ -64,9 +64,9 @@ class Mpv < Formula
       args << "--enable-lgpl"
     end
 
-    system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
-    system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
-    system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
+    system Formula["python@3.10"].opt_bin/"python3", "bootstrap.py"
+    system Formula["python@3.10"].opt_bin/"python3", "waf", "configure", *args
+    system Formula["python@3.10"].opt_bin/"python3", "waf", "install"
 
     system "python3", "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
