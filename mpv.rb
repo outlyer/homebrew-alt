@@ -4,13 +4,14 @@ class Mpv < Formula
   url "https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz"
   sha256 "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
   license :cannot_represent
-  head "https://github.com/mpv-player/mpv.git"
+  head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   depends_on "pkg-config" => :build
   depends_on "python@3.10" => :build
   depends_on xcode: :build
 
   depends_on "outlyer/alt/ffmpeg"
+  depends_on "outlyer/alt/libplacebo"
   depends_on "libass"
  # depends_on "jpeg"
   depends_on "libarchive"
@@ -48,7 +49,6 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
-      --disable-libarchive
       --enable-lua
       --enable-libarchive
       --lua=luajit
