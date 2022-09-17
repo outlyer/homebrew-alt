@@ -11,7 +11,7 @@ class Mpv < Formula
   depends_on xcode: :build
 
   depends_on "outlyer/alt/ffmpeg"
-  depends_on "outlyer/alt/libplacebo"
+#  depends_on "outlyer/alt/libplacebo"
   depends_on "libass"
  # depends_on "jpeg"
   depends_on "libarchive"
@@ -20,7 +20,7 @@ class Mpv < Formula
   depends_on "uchardet"
   depends_on "yt-dlp"
   depends_on "luajit-openresty"
-
+  depends_on "jpeg-turbo"
   depends_on "vapoursynth" => :optional
   depends_on "jack" => :optional
   depends_on "libaacs" => :optional

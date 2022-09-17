@@ -9,6 +9,7 @@ class Libplacebo < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "libepoxy"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
