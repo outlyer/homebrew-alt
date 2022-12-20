@@ -1,8 +1,8 @@
 class Unrar < Formula
   desc "Extract, view, and test RAR archives"
   homepage "https://www.rarlab.com/"
-  url "https://www.rarlab.com/rar/unrarsrc-6.1.2.tar.gz"
-  sha256 "3e96421f568e438af6dcdaef717c48eb93b825d97058ebcb173b9bfc57807be3"
+  url "https://www.rarlab.com/rar/unrarsrc-6.2.3.tar.gz"
+  sha256 "120936e41f826cd63d77a580aeea64c1b79fd3e2434f58ce8184e783b51e5b01"
 
   livecheck do
     url "https://www.rarlab.com/rar_add.htm"
@@ -14,7 +14,7 @@ class Unrar < Formula
     # so we do the dirty work of renaming their shared objects to
     # dylibs for them.
     inreplace "makefile", "libunrar.so", "libunrar.dylib"
-
+    inreplace "makefile", "CXXFLAGS=-O2 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else","CXXFLAGS=-O2 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else -std=c++11"
     system "make"
     bin.install "unrar"
 
