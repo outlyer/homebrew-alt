@@ -1,8 +1,8 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-5.1.1.tar.xz"
-  sha256 "95bf3ff8c496511e71e958fb249e663c8c9c3de583c5bebc0f5a9745abbc0435"
+  url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz"
+  sha256 "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
@@ -35,6 +35,7 @@ class Ffmpeg < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gnutls"
+  depends_on "fdk-aac"
   depends_on "xz"
 
   depends_on "chromaprint" => :optional
@@ -94,6 +95,14 @@ class Ffmpeg < Formula
       --enable-libdav1d
       --enable-gnutls
       --disable-libjack
+      --disable-debug
+      --disable-doc
+      --disable-shared
+      --disable-xlib
+      --disable-libxcb-shm
+      --disable-libxcb-xfixes
+      --disable-libxcb-shape
+      --enable-gpl
       --disable-indev=jack
     ]
 
@@ -124,6 +133,7 @@ class Ffmpeg < Formula
     args << "--enable-libwebp" if build.with? "webp"
     args << "--enable-libzimg" if build.with? "zimg"
     args << "--enable-libzmq" if build.with? "zeromq"
+    args << "--enable-libx265" if build.with? "x265"
 
     if build.with? "openjpeg"
       args << "--enable-libopenjpeg"
