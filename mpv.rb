@@ -7,16 +7,16 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on xcode: :build
 
   depends_on "outlyer/alt/ffmpeg"
-#  depends_on "outlyer/alt/libplacebo"
+# depends_on "outlyer/alt/libplacebo"
   depends_on "libass"
- # depends_on "jpeg"
-  depends_on "libarchive"
-  #depends_on "little-cms2"
-#  depends_on "mujs"
+# depends_on "jpeg"
+# depends_on "libarchive"
+# depends_on "little-cms2"
+# depends_on "mujs"
   depends_on "uchardet"
   depends_on "yt-dlp"
   depends_on "luajit-openresty"
@@ -38,7 +38,7 @@ class Mpv < Formula
     ENV["LC_ALL"] = "C"
 
     # libarchive is keg-only
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    #ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
     # luajit-openresty is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["luajit-openresty"].opt_lib/"pkgconfig"
 
@@ -50,7 +50,6 @@ class Mpv < Formula
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
       --enable-lua
-      --enable-libarchive
       --lua=luajit
       --enable-uchardet
     ]
@@ -60,15 +59,11 @@ class Mpv < Formula
     args << "--enable-dvdread" if build.with? "libdvdread"
     args << "--enable-pulse" if build.with? "pulseaudio"
 
-    if build.with? "lgpl"
-      args << "--enable-lgpl"
-    end
-
-    system Formula["python@3.10"].opt_bin/"python3", "bootstrap.py"
-    system Formula["python@3.10"].opt_bin/"python3", "waf", "configure", *args
-    system Formula["python@3.10"].opt_bin/"python3", "waf", "install"
-
-    system "python3", "TOOLS/osxbundle.py", "build/mpv"
+    python3 = "python3.11"
+    system python3, "bootstrap.py"
+    system python3, "waf", "configure", *args
+    system python3, "waf", "install"
+    system python3, "TOOLS/osxbundle.py", "build/mpv"
     prefix.install "build/mpv.app"
   end
 
