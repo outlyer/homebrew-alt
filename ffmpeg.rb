@@ -31,12 +31,12 @@ class Ffmpeg < Formula
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "dav1d"
-  depends_on "fontconfig"
-  depends_on "freetype"
-  depends_on "gnutls"
-  depends_on "fdk-aac"
-  depends_on "xz"
+ # depends_on "dav1d"
+  #depends_on "fontconfig"
+  #depends_on "freetype"
+ #depends_on "gnutls"
+  #depends_on "fdk-aac"
+  #depends_on "xz"
 
   depends_on "chromaprint" => :optional
   depends_on "fdk-aac" => :optional
@@ -90,11 +90,11 @@ class Ffmpeg < Formula
       --enable-gpl
       --enable-nonfree
       --enable-opencl
-      --enable-libfontconfig
-      --enable-libfreetype
-      --enable-lzma
-      --enable-libdav1d
-      --enable-gnutls
+      --disable-libfontconfig
+      --disable-libfreetype
+      --disable-lzma
+      --disable-libdav1d
+      --disable-gnutls
       --disable-libjack
       --disable-debug
       --disable-doc

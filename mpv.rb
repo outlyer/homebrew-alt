@@ -10,11 +10,11 @@ class Mpv < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on xcode: :build
   depends_on "outlyer/alt/ffmpeg"
-  depends_on "jpeg-turbo"
-  depends_on "libarchive"
+  #depends_on "jpeg-turbo"
+  #depends_on "libarchive"
   depends_on "libass"
   depends_on "luajit"
-  depends_on "mujs"
+  #depends_on "mujs"
   depends_on "uchardet"
   depends_on "yt-dlp"
 
@@ -32,10 +32,10 @@ class Mpv < Formula
 
     args = %W[
       -Dhtml-build=disabled
-      -Djavascript=enabled
-      -Dlibmpv=true
+      -Djavascript=disabled
+      -Dlibmpv=false
       -Dlua=luajit
-      -Dlibarchive=enabled
+      -Dlibarchive=disabled
       -Duchardet=enabled
       --sysconfdir=#{pkgetc}
       --datadir=#{pkgshare}
@@ -46,19 +46,9 @@ class Mpv < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    if OS.mac?
-      # `pkg-config --libs mpv` includes libarchive, but that package is
-      # keg-only so it needs to look for the pkgconfig file in libarchive's opt
-      # path.
-      libarchive = Formula["libarchive"].opt_prefix
-      inreplace lib/"pkgconfig/mpv.pc" do |s|
-        s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
-                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")
-      end
-  end
-
-    bash_completion.install "etc/mpv.bash-completion" => "mpv"
-    zsh_completion.install "etc/_mpv.zsh" => "_mpv"
+    
+    #bash_completion.install "etc/mpv.bash-completion" => "mpv"
+    #zsh_completion.install "etc/_mpv.zsh" => "_mpv"
   end
 
   test do
