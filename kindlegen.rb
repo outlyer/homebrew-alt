@@ -1,24 +1,17 @@
-require 'formula'
-
 class Kindlegen < Formula
-  url 'https://s3.amazonaws.com/kindlepreviewer3/KindlePreviewerInstaller.pkg'
+  desc "Kindle to Mobi converter"
+  url 'https://d2bzeorukaqrvt.cloudfront.net/KindlePreviewerInstaller.pkg'
   homepage 'http://www.amazon.com/gp/feature.html?docId=1000234621'
-  sha256 '0af12a8fe799205f06a7e0f3f94287b77f1aa6e796d1fd3babaf9d4b09fc5858'
+  sha256 '71823754dbe3270f27c227beef1d9be56b257e7a67796a592a26486dbecfab49'
   version '2.9'
 
-  skip_clean 'bin'
+  #skip_clean 'bin'
 
   def install
-    #OUTPUTPATH=/tmp/kindlegen
-  	#pkgutil --expand KindlePreviewerInstaller.pkg $OUTPUTPATH
-    #\cat $OUTPUTPATH/KindlePreviewer.pkg/Payload | gunzip > $OUTPUTPATH/Payload
-    # cd $OUTPUTPATH
-    #\cat $OUTPUTPATH/Payload | cpio -i
-    #bin.install  $OUTPUTPATH/Kindle\ Previewer\ 3.app/Contents/lib/fc/bin/kindlegen
-
-    #chmod 0755, Dir['kindlegen']
-    #bin.install Dir['kindlegen']
-
+    pkg_path = "KindlePreviewerInstaller.pkg"
+    system "pkgutil", "--expand-full", pkg_path, "tmp"
+    #system "gunzip","-dc","tmp/KindlePreviewer.pkg/Payload | cpio -ivV"
+    bin.install  "tmp/KindlePreviewer.pkg/Payload/Kindle\ Previewer\ 3.app/Contents/lib/fc/bin/kindlegen" => "kindlegen"
   end
 
   def test
