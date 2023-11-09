@@ -14,6 +14,7 @@ class Mpv < Formula
   #depends_on "libarchive"
   depends_on "libass"
   depends_on "luajit"
+  depends_on "dav1d"
   #depends_on "mujs"
   depends_on "uchardet"
   #depends_on "yt-dlp"
