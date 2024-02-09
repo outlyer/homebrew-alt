@@ -1,13 +1,17 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https://github.com/nzbgetcom/nzbget"
-  url "https://github.com/nzbgetcom/nzbget/archive/refs/tags/v22.0.tar.gz"
-  sha256 "2bec63a0c5c0fed0779adca488499f890f603dcc8f161ae6bcff62e866b1d24b"
+  url "https://github.com/nzbgetcom/nzbget/archive/refs/tags/v23.0.tar.gz"
+  sha256 "93257393823372699ba38340d5447850905959a6c6ccd5c082bea212f0f0bc46"
   license "GPL-2.0-or-later"
   head "https://github.com/nzbgetcom/nzbget", branch: "develop"
 
   depends_on "pkg-config" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "openssl@3"
+  depends_on "boost"
+
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -27,6 +31,7 @@ class Nzbget < Formula
     end
 
     # Tell configure to use OpenSSL
+    system "autoreconf --install"
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-tlslib=OpenSSL"
@@ -35,14 +40,6 @@ class Nzbget < Formula
     system "make", "install"
     pkgshare.install_symlink "nzbget.conf" => "webui/nzbget.conf"
 
-    # Set upstream's recommended values for file systems without
-    # sparse-file support (e.g., HFS+); see Homebrew/homebrew-core#972
-    if OS.mac?
-      inreplace "nzbget.conf", "DirectWrite=yes", "DirectWrite=no"
-      inreplace "nzbget.conf", "ArticleCache=0", "ArticleCache=700"
-    end
-
-    etc.install "nzbget.conf"
   end
 
   service do
