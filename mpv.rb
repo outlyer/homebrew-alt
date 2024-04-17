@@ -15,9 +15,8 @@ class Mpv < Formula
   depends_on "libass"
   depends_on "luajit"
   depends_on "dav1d"
-  #depends_on "mujs"
+  depends_on "libplacebo" 
   depends_on "uchardet"
-  #depends_on "yt-dlp"
 
   def install
      # LANG is unset by default on macOS and causes issues when calling getlocale
