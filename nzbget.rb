@@ -1,17 +1,15 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https://github.com/nzbgetcom/nzbget"
-  url "https://github.com/nzbgetcom/nzbget/archive/refs/tags/v23.0.tar.gz"
-  sha256 "93257393823372699ba38340d5447850905959a6c6ccd5c082bea212f0f0bc46"
+  url "https://github.com/nzbgetcom/nzbget/archive/refs/tags/v24.0.tar.gz"
+  sha256 "f8b66551b943f72442a0fb00d8872a0e9c92c829e63d6a74c35888b7cb658dca"
   license "GPL-2.0-or-later"
   head "https://github.com/nzbgetcom/nzbget", branch: "develop"
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "openssl@3"
   depends_on "boost"
-
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -30,16 +28,14 @@ class Nzbget < Formula
       ENV["ncurses_LIBS"] = "-L#{Formula["ncurses"].opt_lib} -lncurses"
     end
 
-    # Tell configure to use OpenSSL
-    system "autoreconf --install"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-tlslib=OpenSSL"
-    system "make"
-    ENV.deparallelize
-    system "make", "install"
-    pkgshare.install_symlink "nzbget.conf" => "webui/nzbget.conf"
 
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make"
+      ENV.deparallelize
+      system "make", "install"
+      pkgshare.install_symlink "nzbget.conf" => "webui/nzbget.conf"
+  end
   end
 
   service do
