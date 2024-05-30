@@ -1,6 +1,6 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https://ffmpeg.org/"
+  homepage "https://`.org/"
   url "https://ffmpeg.org/releases/ffmpeg-7.0.tar.xz"
   sha256 "4426a94dd2c814945456600c8adfc402bee65ec14a70e8c531ec9a2cd651da7b"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
@@ -101,7 +101,6 @@ class Ffmpeg < Formula
       --disable-libjack
       --disable-debug
       --disable-doc
-      --disable-shared
       --disable-xlib
       --disable-libxcb
       --disable-libxcb-shm
