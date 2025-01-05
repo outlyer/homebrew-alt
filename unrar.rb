@@ -1,8 +1,8 @@
 class Unrar < Formula
   desc "Extract, view, and test RAR archives"
   homepage "https://www.rarlab.com/"
-  url "https://www.rarlab.com/rar/unrarsrc-7.0.9.tar.gz"
-  sha256 "505c13f9e4c54c01546f2e29b2fcc2d7fabc856a060b81e5cdfe6012a9198326"
+  url "https://www.rarlab.com/rar/unrarsrc-7.1.2.tar.gz"
+  sha256 "143dcacb3a9d9ca0af695adecabe1350b0a3e93d927a065ef8f7cc605ab2d322"
 
   livecheck do
     url "https://www.rarlab.com/rar_add.htm"
@@ -13,7 +13,7 @@ class Unrar < Formula
     # upstream doesn't particularly care about their unix targets,
     # so we do the dirty work of renaming their shared objects to
     # dylibs for them.
-    inreplace "version.hpp","RARVER_MINOR     1", "RARVER_MINOR     9"
+    inreplace "version.hpp","#define RARVER_MINOR    10", "#define RARVER_MINOR    11"
     inreplace "makefile", "libunrar.so", "libunrar.dylib"
     #inreplace "makefile", "CXXFLAGS=-march=native -O2 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else","CXXFLAGS=-march=native -O2 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else -std=c++11"
     system "make"

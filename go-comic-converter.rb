@@ -1,9 +1,9 @@
 class GoComicConverter < Formula
   desc "Convert CBZ/CBR/Dir into EPUB for e-reader devices (Kindle Devices, Apple Books, etc.)"
   homepage "https://github.com/celogeek/go-comic-converter"
-  version "2.7.2"
+  version "3.0.0"
   url "https://github.com/celogeek/go-comic-converter/archive/refs/tags/v#{version}.tar.gz"
-  sha256 "2f0483741dd316e368f3169c5694adedd2b79b60476d716ce8f9d346b81030a0"
+  sha256 "76dc588268c63fcde6b575912979bb570f54cbf46650c8d7db1474f5a0d18b5b"
   license "MIT"
   head "https://github.com/celogeek/go-comic-converter.git", branch: "main"
 
