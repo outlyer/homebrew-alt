@@ -1,8 +1,8 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://`.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz"
-  sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
+  url "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz"
+  sha256 "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
@@ -33,7 +33,7 @@ class Ffmpeg < Formula
   depends_on "pkg-config" => :build
 
   depends_on "dav1d"
-  depends_on "x265"
+  #depends_on "x265"
  # depends_on "vulkan-loader"
  # depends_on "vulkan-headers"
   #depends_on "fontconfig"
@@ -96,7 +96,7 @@ class Ffmpeg < Formula
       --enable-opencl
       --enable-libdav1d
       --enable-libfdk-aac
-      --enable-libx265
+      --disable-libx265
       --disable-libfontconfig
       --disable-libfreetype
       --disable-lzma
