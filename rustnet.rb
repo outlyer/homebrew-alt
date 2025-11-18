@@ -1,8 +1,8 @@
 class Rustnet < Formula
   desc "Cross-platform network monitoring terminal UI tool built with Rust."
   homepage "https://github.com/domcyrus/rustnet"
-  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "8ef826035a2d86f04718783d8f532be4eea4deea8b64817980a9c8b970e7380f"
+  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "9fa251bbce11c4ff6f58ba57e08efbec94b2a031cd3d102d2ce45f0611d4f42e"
   license "Apache"
   head "https://github.com/domcyrus/rustnet.git", branch: "master"
 

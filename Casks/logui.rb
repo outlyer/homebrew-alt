@@ -1,8 +1,8 @@
 cask "logui" do
-  version "1.0.74"
-  sha256 "2daa8d429c3448d0f1d2fa9423cd0ecdc853e363f1f37bdd9272da13e5ac8936"
+  version "1.0.77"
+  sha256 "5d398ff4bf523abdf04d2307b74535693e214fbb2266d74312b5bfee6628d4f6"
 
-  url "https://eclecticlight.co/wp-content/uploads/2025/09/logui174.zip"
+  url "https://eclecticlight.co/wp-content/uploads/2025/10/logui177.zip"
   name "LogUI"
   desc "Accessible modern log browser, for macOS Sonoma and later"
   homepage "https://eclecticlight.co/consolation-t2m2-and-log-utilities/"
@@ -10,7 +10,7 @@ cask "logui" do
   auto_updates false
   depends_on macos: ">= :sonoma"
 
-  app "logui174/LogUI.app"
+  app "logui177/LogUI.app"
 
   uninstall quit: "cco.eclecticlight.LogUI"
 
