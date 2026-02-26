@@ -1,19 +1,10 @@
 class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
+  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz"
+  sha256 "ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209"
   license :cannot_represent
   head "https://github.com/mpv-player/mpv.git", branch: "master"
-
-  stable do
-    url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz"
-    sha256 "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3"
-
-    # Backport support for FFmpeg 8
-    patch do
-      url "https://github.com/mpv-player/mpv/commit/26b29fba02a2782f68e2906f837d21201fc6f1b9.patch?full_index=1"
-      sha256 "ac7e5d8e765186af2da3bef215ec364bd387d43846ee776bd05f01f9b9e679b2"
-    end
-  end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -77,6 +68,7 @@ class Mpv < Formula
 
     bash_completion.install "etc/mpv.bash-completion" => "mpv"
     zsh_completion.install "etc/_mpv.zsh" => "_mpv"
+    fish_completion.install "etc/mpv.fish" => "mpv"
   end
 
   test do
