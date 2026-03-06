@@ -16,7 +16,7 @@ class Mpv < Formula
   depends_on "libplacebo"
   depends_on "little-cms2"
   depends_on "luajit"
-  depends_on "rubberband"
+  #depends_on "rubberband"
   depends_on "uchardet"
   depends_on "vulkan-loader"
 
