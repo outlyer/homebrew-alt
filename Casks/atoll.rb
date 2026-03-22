@@ -1,8 +1,8 @@
 cask "atoll" do
-  version "2.0.1"
-  sha256 "5daa903ffecc0b90436248161ed4fe269647c9832ffe04dffc345fe80e5d0ab8"
+  version "2.1.0"
+  sha256 "add3a30d4e9bfa5cd180f2538c88d4cda047813dafe574fab5d0660087c3392b"
 
-  url "https://github.com/Ebullioscopic/Atoll/releases/download/v2.0.1/Atoll.2.0.1.dmg"
+  url "https://github.com/Ebullioscopic/Atoll/releases/download/v#{version}/Atoll.#{version}.dmg"
   name "Atoll"
   desc "Turns the MacBook notch into a focused command surface for media, system insight, and quick utilities."
   homepage "https://github.com/Ebullioscopic/Atoll"
