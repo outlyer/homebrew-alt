@@ -8,7 +8,7 @@ cask "logui" do
   homepage "https://eclecticlight.co/consolation-t2m2-and-log-utilities/"
 
   auto_updates false
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "logui177/LogUI.app"
 
