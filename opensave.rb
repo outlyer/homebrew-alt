@@ -1,10 +1,10 @@
 class Opensave < Formula
   desc "Sync your game saves between devices, peer-to-peer."
   homepage "https://github.com/celogeek/go-comic-converter"
-  version "2.1.0"
+  version "2.1.1"
   url "https://github.com/sivadaboi/OpenSave/archive/refs/tags/v#{version}.tar.gz"
 
-  sha256 "9dbe324d1f763930fba00edaf8f0b4b89061f8866421cd30184869fe9d0420ed"
+  sha256 "7a81aacbf2e63080ffc8e185cbaf439f94f4132505c503132f0dbdb2b2165c70"
   license "MIT"
   head "https://github.com/sivadaboi/OpenSave", branch: "main"
 
