@@ -1,9 +1,9 @@
 class GoComicConverter < Formula
   desc "Convert CBZ/CBR/Dir into EPUB for e-reader devices (Kindle Devices, Apple Books, etc.)"
   homepage "https://github.com/celogeek/go-comic-converter"
-  version "3.0.4"
+  version "3.6.0"
   url "https://github.com/celogeek/go-comic-converter/archive/refs/tags/v#{version}.tar.gz"
-  sha256 "c3a887d0f986c5a2b475b5245154d9d321ee4a25a212610d7398ac5d4e2f02d0"
+  sha256 "4fb943f04abc53b5b74dcbf39848c77cc4012f4823db005d49a6007cb26c37e3"
   license "MIT"
   head "https://github.com/celogeek/go-comic-converter.git", branch: "main"
 
@@ -13,7 +13,7 @@ class GoComicConverter < Formula
     ldflags = %W[
       -s -w
     ]
-    system "go", "build", *std_go_args(ldflags:), "main.go"
+    system "go", "build", *std_go_args(ldflags: "-X Main.Version=#{version}"), "main.go"
   end
 
 end
